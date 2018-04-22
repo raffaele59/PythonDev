@@ -1,0 +1,22 @@
+
+dll da aggiungere:
+
+geos
+geos_c
+iconv
+libfreexl-1
+libgeos_c-1
+libgeos-3-5-0
+liblzma-5
+libproj-9
+libstdc++-6
+libxml2-2
+proj
+spatialite
+zlib1
+
+
+altri file da aggiungere:
+
+.ui
+.ttf

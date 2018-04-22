@@ -1,0 +1,760 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>852</width>
+    <height>681</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>852</width>
+    <height>681</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>852</width>
+    <height>681</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>GeoControlli_RT</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>Main/GeoControlli.ico</normaloff>Main/GeoControlli.ico</iconset>
+  </property>
+  <property name="animated">
+   <bool>true</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTextBrowser" name="txtbOutMsgs">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>550</y>
+      <width>691</width>
+      <height>101</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pbExit">
+    <property name="geometry">
+     <rect>
+      <x>720</x>
+      <y>620</y>
+      <width>121</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Esce dal programma</string>
+    </property>
+    <property name="text">
+     <string>Esci</string>
+    </property>
+   </widget>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>831</width>
+      <height>531</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>3</number>
+    </property>
+    <widget class="QWidget" name="tabControls">
+     <attribute name="title">
+      <string>Controlli</string>
+     </attribute>
+     <widget class="QTreeWidget" name="trwControls">
+      <property name="geometry">
+       <rect>
+        <x>7</x>
+        <y>69</y>
+        <width>391</width>
+        <height>431</height>
+       </rect>
+      </property>
+      <property name="rootIsDecorated">
+       <bool>true</bool>
+      </property>
+      <property name="headerHidden">
+       <bool>true</bool>
+      </property>
+      <column>
+       <property name="text">
+        <string notr="true">1</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QComboBox" name="cbContext">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>100</y>
+        <width>201</width>
+        <height>30</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>80</y>
+        <width>201</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Contesto:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pbOpenDbDelivery">
+      <property name="geometry">
+       <rect>
+        <x>770</x>
+        <y>10</y>
+        <width>41</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Scegliere il database SpatiaLite con i dati geografici da sottoporre a controllo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="text">
+       <string>...</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="laDbDelivery">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>12</y>
+        <width>111</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;DB dati da controllare:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="leDbDelivery">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>10</y>
+        <width>621</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;File del database SpatiaLite con i dati geografici da sottoporre a controllo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pbSaveChkCtrl">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>450</y>
+        <width>101</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Salva l'insieme delle scelte effettuate sull'albero dei controlli&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="text">
+       <string>Salva scelte...</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pbLoadChkCtrl">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>477</y>
+        <width>101</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Carica nell'albero dei controlli l'insieme delle scelte salvate&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="text">
+       <string>Carica scelte...</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="laDbLog">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>121</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;DB diagnostica (output):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="leDbLog">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>40</y>
+        <width>621</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>File del database SpatiaLite per la diagnostica di output</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pbOpenDbLog">
+      <property name="geometry">
+       <rect>
+        <x>770</x>
+        <y>40</y>
+        <width>41</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Scegliere il database SpatiaLite per la diagnostica di output&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="text">
+       <string>...</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pbConnectDb">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>100</y>
+        <width>191</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Eseguire le connessioni ai database di configurazione, dati e log&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="text">
+       <string>Connetti</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>80</y>
+        <width>191</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Connessione ai database</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QGroupBox" name="gbSessCtrl">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>150</y>
+        <width>401</width>
+        <height>201</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Sessione di controllo </string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="flat">
+       <bool>false</bool>
+      </property>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>80</y>
+         <width>61</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Operatore:</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="leNote">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>110</y>
+         <width>291</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Inserire eventuali note da asscoiare alla sessione di controllo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_3">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>110</y>
+         <width>61</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Note:</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="leDelivName">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>50</y>
+         <width>291</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Specificare il nome della consegna da associare alla sessione di controllo</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>50</y>
+         <width>61</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Consegna:</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="leOperator">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>80</y>
+         <width>291</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specificare il codice dell'operatore da asscoiare alla sessione di controllo&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pbExecuteControls">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>210</x>
+         <y>150</y>
+         <width>171</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>3</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Eseguire la serie dei controlli selezionati&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="text">
+        <string>Esegui controlli</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_7">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>20</y>
+         <width>251</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Informazioni da associare alla sessione:</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="labSqliteVers">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>460</y>
+        <width>151</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labSpatialiteVers">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>660</x>
+        <y>480</y>
+        <width>151</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tabLog">
+     <attribute name="title">
+      <string>Log</string>
+     </attribute>
+     <widget class="QPushButton" name="pbTestSpatial">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>470</y>
+        <width>110</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Connect Repository Database</string>
+      </property>
+      <property name="text">
+       <string>Test Spatial Query</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="txtbResults">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>801</width>
+        <height>451</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Courier New</family>
+       </font>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pbEmptyLogBox">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>470</y>
+        <width>110</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Svuota la lista di log</string>
+      </property>
+      <property name="text">
+       <string>Svuota LOG</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Sessioni</string>
+     </attribute>
+     <widget class="QTableWidget" name="tbwSessions">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>801</width>
+        <height>451</height>
+       </rect>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
+      </property>
+      <property name="sortingEnabled">
+       <bool>true</bool>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+      <attribute name="verticalHeaderVisible">
+       <bool>false</bool>
+      </attribute>
+     </widget>
+     <widget class="QPushButton" name="pbReportSessione">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>470</y>
+        <width>121</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Crea il report pdf con i risultati dalla sessione di controllo selezionata&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="text">
+       <string>Crea report sessione</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pbOutTables">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>470</y>
+        <width>121</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Crea le tabelle geografiche degli errori risultanti dalla sessione di controllo selezionata&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="text">
+       <string>Crea tabelle out</string>
+      </property>
+     </widget>
+     <widget class="QTableView" name="tbvSessions">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>470</y>
+        <width>161</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
+      <property name="midLineWidth">
+       <number>0</number>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::SingleSelection</enum>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
+      </property>
+      <property name="sortingEnabled">
+       <bool>true</bool>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+      <property name="cornerButtonEnabled">
+       <bool>false</bool>
+      </property>
+      <attribute name="verticalHeaderVisible">
+       <bool>false</bool>
+      </attribute>
+     </widget>
+     <widget class="QCheckBox" name="cbOkResultsOut">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>469</y>
+        <width>131</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Scrive nel report pdf anche i controlli in cui non si sono verificati errori (esito ok)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="text">
+       <string> Lista completa risultati
+(anche esiti controlli ok)</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="cbDescrizOut">
+      <property name="geometry">
+       <rect>
+        <x>720</x>
+        <y>470</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Scrive nel report pdf la descrizione del tipo di controllo (se diverso dal precedente)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="text">
+       <string> Descrizioni dei
+ tipi di controllo</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tabDbSelect">
+     <attribute name="title">
+      <string>Config</string>
+     </attribute>
+     <widget class="QLabel" name="laDbConfig">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>40</y>
+        <width>121</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;DB di configurazione:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pbOpenDbConfig">
+      <property name="geometry">
+       <rect>
+        <x>770</x>
+        <y>60</y>
+        <width>41</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Scegliere il database SpatiaLite con le configurazioni dei controlli&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="text">
+       <string>...</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="leDbConfig">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>60</y>
+        <width>741</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>Nome del database SpatiaLite con le configurazioni dei controlli</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pbCreateEmptyDbLog">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>430</y>
+        <width>181</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Crea un database SpatiaLite vuoto con le impostazioni per essere usato come DB Diagnostico&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="text">
+       <string>Crea DB Diagnostico vuoto</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pbCreateModDoc">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>460</y>
+        <width>181</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Crea la documentazione dei modelli dei controlli in formato PDF &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="text">
+       <string>Crea PDF documentaz. modelli</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="pbInfo">
+    <property name="geometry">
+     <rect>
+      <x>720</x>
+      <y>588</y>
+      <width>121</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Informazioni...</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>852</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

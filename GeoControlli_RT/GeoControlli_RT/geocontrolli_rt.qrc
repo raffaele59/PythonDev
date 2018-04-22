@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="gcrt_">
+    <file>geocontrolli_rt_info.bmp</file>
+  </qresource>
+</RCC>

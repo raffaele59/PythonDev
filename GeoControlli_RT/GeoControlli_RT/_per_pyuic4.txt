@@ -1,0 +1,14 @@
+
+set PYTHONPATH=C:\Python27\Lib
+set PYTHONHOME=C:\Python27
+
+C:\Python27\Lib\site-packages\PyQt4\pyuic4 geocontrolli_rt_dialog_base.ui -o geocontrolli_rt_dialog_base.py
+
+C:\Python27\Lib\site-packages\PyQt4\pyuic4 geocontrolli_rt_dialog_info.ui -o geocontrolli_rt_dialog_info.py
+
+rem C:\Python27\Lib\site-packages\PyQt4\pyrcc4 -o App/ui/resources_rc.py App/resources.qrc
+
+C:\Python27\Lib\site-packages\PyQt4\pyrcc4 geocontrolli_rt.qrc -o geocontrolli_rt_rc.py
+
+
+C:\Python27\Lib\site-packages\PyQt4\pyuic4 geocontrolli_rt_dialog_descr_sql.ui -o geocontrolli_rt_dialog_descr_sql.py

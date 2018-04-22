@@ -1,0 +1,6 @@
+dalla cartella Main:
+
+pyinstaller --distpath C:\Users\utente\workspace\GeoControlli_RT\dist_mono GeoControlli_RT_mono.spec
+
+pyinstaller --distpath C:\Users\utente\workspace\GeoControlli_RT\dist_multi GeoControlli_RT_multi.spec
+
