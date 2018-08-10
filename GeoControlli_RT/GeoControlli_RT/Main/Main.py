@@ -2,7 +2,7 @@
 '''
 Created on 23/giu/2017
 
-@author: Raffaele&Virgilio Factory
+@author: Virgilio Cima
 '''
 from os.path import dirname, abspath, isfile, normpath
 from os import startfile #subprocess
@@ -1078,6 +1078,8 @@ class GeoControlli_RT(QtGui.QMainWindow, Ui_MainWindow): #
         set_tblndx=set([])
         sql_query=self.dict_controls[str(self.cur_codctrl)]['SQL_MOD']
         set_tblndx=self.get_set_tblndx(sql_query) 
+        for tbl_name in set_tblndx:
+            self.db_service.chk_geo_ndx(tbl_name)
                        
     def get_set_tblndx(self,sql_query):
         import re

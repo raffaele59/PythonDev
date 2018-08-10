@@ -1,7 +1,7 @@
 '''
 Created on 15/gen/2017
 
-@author: Raffaele&Virgilio Factory
+@author: Virgilio Cima
 '''
 #from pyspatialite import dbapi2 as sldb
 import sqlite3
@@ -751,5 +751,26 @@ class ClsDbService(object):
         finally:    
             return str_out  
         
+    def chk_geo_ndx(self, tbl_name):
+        try:
+            self.db_status=0            
+            self.err_msg=""
+            geo_ndx_list=[]
+            db_cursor = self.db_conn.cursor()
+            db_cursor2 = self.db_conn.cursor()
+            sql_cmd="SELECT f_geometry_column, spatial_index_enabled FROM geometry_columns where f_table_name=?"
+            db_cursor.execute(sql_cmd,[tbl_name])
+            for row in db_cursor.fetchall():
+                geo_name=row[0]
+                ndx_pres=row[1]
+                sql_cmd="select checkspatialindex(?, ?)"
+                db_cursor2.execute(sql_cmd,[tbl_name,geo_name])
+                ndx_ok=db_cursor2.fetchone()[0]
+                geo_ndx_list.append({'GEO_NAME':geo_name, 'NDX_PRES':ndx_pres,'NDX_OK':ndx_ok})
+        except Exception as e:
+            self.db_status=1
+            self.err_msg=e.message
+        finally:  
+            return geo_ndx_list        
 '''
 '''

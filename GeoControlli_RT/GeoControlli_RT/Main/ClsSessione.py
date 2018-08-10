@@ -1,7 +1,7 @@
 '''
 Created on 19/set/2017
 
-@author: Raffaele&Virgilio Factory
+@author: Virgilio Cima
 '''
 
 class ClsSessione(object):
